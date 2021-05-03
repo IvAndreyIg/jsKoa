@@ -10,7 +10,7 @@ const db=require('./models')
 
 //console.log("db:",db)
 
-db.sequelize.sync()
+db.sequelize.sync({alter:true})
     .then(()=>console.log('models synced!'))
     .catch(er=>console.log(err));
 

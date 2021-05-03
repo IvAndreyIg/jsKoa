@@ -15,7 +15,7 @@ module.exports={
         }
     },
 
-    async find(ctx){
+    /* async find(ctx){
 
         
 
@@ -24,13 +24,19 @@ module.exports={
         } catch (err) {
             ctx.throw(500,err)
         }
-    },
+    }, */
     async find(ctx){
 
         
 
         try {
-           ctx.body= await ctx.db.Company.findAll({})
+           ctx.body= await ctx.db.Company.findAll({
+               include:[
+                   {
+                       model:ctx.db.Job
+                   }
+               ]
+           })
         } catch (err) {
             ctx.throw(500,err)
         }
@@ -38,9 +44,15 @@ module.exports={
     async findOne(ctx){
         try {
           let company  = await ctx.db.Company.findOne({
-                where: {
+            where: {
                     id: ctx.params.id
-            }})
+            },
+            include:[
+                {
+                    model:ctx.db.Job
+                }
+            ]
+        })
             if(!company){
                 ctx.throw(404,'company id is invalid')
             }else
