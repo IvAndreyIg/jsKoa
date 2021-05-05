@@ -12,7 +12,7 @@ const db=require('./models')
 
 db.sequelize.sync({alter:true})
     .then(()=>console.log('models synced!'))
-    .catch(er=>console.log(err));
+    .catch(err=>console.log(err));
 
 app.context.db=db;
 app.use(bodyParser());

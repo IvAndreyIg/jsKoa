@@ -4,7 +4,8 @@
     "password": "1234",
     "database": "testdb",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "secret":"EYSD2123"
   },
   "test": {
     "username": "root",
