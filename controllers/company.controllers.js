@@ -1,5 +1,24 @@
 
 module.exports={
+    /**
+     * 
+     * @api {post} /companies
+     * @apiGroup Companies
+     * @apiName createCompany
+     * @apiParam {String} [firstName] 
+     * @apiParam {String} [lastName] 
+     * @apiParam {String} [email] 
+     * @apiParam {Number} [jobId] 
+     * @apiSuccess {Object} Company A newly created Company Object
+     * @apiExample {curl} Example usage:
+     * curl -i http://localhost:8000/companies
+     * @apiDescription LoggedIn user can register new company
+     * @apiHeader {String} Authorization JWT Authorization header
+     * @apiHeaderExample {json} Request Authorization Header
+     * {
+     *  "authorization":"jdkfawkfwga31231241231"
+     * }
+     */
     async create(ctx){
 
         

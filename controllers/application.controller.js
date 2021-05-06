@@ -1,5 +1,25 @@
 
 module.exports={
+
+    /**
+     * 
+     * @api {post} /applications
+     * @apiGroup Applications
+     * @apiName createJob
+     * @apiParam {String} [firstName] 
+     * @apiParam {String} [lastName] 
+     * @apiParam {String} [email] 
+     * @apiParam {Number} [jobId] 
+     * @apiSuccess {Object} Application A newly create Application
+     * @apiExample {curl} Example usage:
+     * curl -i http://localhost:8000/applications
+     * @apiDescription LoggedIn user can create application
+     * @apiHeader {String} Authorization JWT Authorization header
+     * @apiHeaderExample {json} Request Authorization Header
+     * {
+     *  "authorization":"jdkfawkfwga31231241231"
+     * }
+     */
     async create(ctx){
         try {
 
